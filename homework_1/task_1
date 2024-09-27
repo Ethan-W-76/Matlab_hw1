@@ -1,0 +1,142 @@
+% Author Name: Ethan Warminsky
+% Email: warmin16@rowan.edu / ethan.warminsky@gmail.com
+% Created On: 09/18/2024
+% Updated On: 09/27/2024
+% Updated By: Ethan Warminsky 
+% Course: MATLAB Programming - Fall 2024
+% Assignment: Homework 1
+% Submission Date: [09/27/24]
+% All rights are reserved - GNU 3
+
+% This code is a Variable Operations Code that will calculate the area of a
+%    circle when given a radius, and also calculate the circumference with
+%    the radius as well. 
+
+% Radius of Circle 
+radius = 5;
+
+% Area of Circle
+Area = (pi*radius^2);
+    fprintf("Area: %f units squared \n", Area)
+
+% Circumference of Circle 
+Circumference = (2*pi*radius);
+    fprintf("Circumference: %f units \n", Circumference)
+
+% End of Variable Operations Code
+
+
+% This code is a Temperature Converter, where user-entered Celsius readings
+%   will be converted to Fahrenheit.  
+
+% Prompt the user to enter a Celsius reading 
+S = input('Enter your temperature');
+
+% Conversion Equation for Celsius to Fahrenheit 
+ F = (S * 9/5) + 32; 
+
+% Display Conversion to User
+   fprintf("The Temperature is %f Fahrenheit \n", F)
+
+% Extreme Heat Warning (When over 100F) 
+    if F > 100
+    fprintf("It's a hot day! Stay Safe! \n")
+
+    end 
+
+% End of the Temperature Converter Code 
+
+
+% This code is a Grocery Shopping Calculator, where users will input thier
+%   groceries and get thier final total. 
+
+% Grocery Prices: 
+
+% Beef 
+B = 15.50; 
+
+% Dragonfruit
+D = 2.50; 
+
+% Potato
+P = 5.00; 
+
+% Lemon
+L = 3.50; 
+
+% Jalapeno 
+J = 7.00; 
+
+% Prompt user for how many of each item they would like to buy 
+    num_B = input('How much Beef would you like to buy?'); 
+
+    num_D = input('How much Dragonfruit would you like to buy?'); 
+
+    num_P = input('How many Potato would you like to buy?');
+
+    num_L = input('How many Lemons would you like to buy?'); 
+
+    num_J = input('How many Jalapenos would you like to buy?'); 
+
+% Calculuate the cost of all of the items in the user's shopping cart 
+
+Cost = (num_B*B)+(num_D*D)+(num_P*P)+(num_L*L)+(num_J*J); 
+
+% Calculate the discount (if it needs to be applied) 
+    if Cost > 50 
+       Discount_Cost = Cost*0.9;
+
+% Display Discounted and Non-Discounted Price 
+           fprintf("Normal Cost = $%f \n", Cost); 
+           fprintf("Discounted Cost = $%f \n", Discount_Cost); 
+
+    else 
+
+% Display Normal Price 
+        NonDiscounted_Cost = Cost; 
+        fprintf("Normal Cost = $%f \n", Cost);
+
+    end 
+
+% End of the Grocery Shopping Calculator 
+
+% This a code for a Number Guessing Game, where users will input a number,
+%   and the code will give hints as to wether the correct number is higher
+%   or lower than what they guessed. 
+
+% Generate a random number between 1 and 100 
+generated_number = randi(100); 
+
+% Establish the guess counter
+guess_count = 0; 
+
+% Indicate whether the user guessed correct
+correct_guess = false;
+
+% Keep asking for guesses until the guess is correct
+while ~correct_guess
+
+    % Prompt the user to guess a number 
+    user_guess = input('Please guess a number between 1 and 100:');
+    
+    % Add to the guess count for every guess made
+    guess_count = guess_count + 1;
+    
+    % Give feedback when the guess is too low
+    if user_guess > generated_number
+        disp('Too high!');
+        
+    % Give feedback when the guess is too high    
+    elseif user_guess < generated_number
+        disp('Too low!');
+
+    % Notify user they are correct, and state how many attempts it took
+    else
+        disp(['Correct! You guessed the number in ', num2str(guess_count), ' attempts']);
+        correct_guess = true;  
+       
+    end
+
+end
+
+% End of Homework 1 Assignment 
